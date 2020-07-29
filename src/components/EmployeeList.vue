@@ -24,22 +24,6 @@
 <script>
     export default {
         name: "EmployeeList",
-        data() {
-            return {
-                // Id элемента из базы данных
-                actionIndex: false,
-                // Id элемента из массива employees
-                itemIndex: '',
-                // Текст всплывающего окна
-                ntfMessage: '',
-                // Цвет всплывающего окна
-                ntfCollor: '#8BC34A',
-                // Показ всплывающего окна
-                ntfShow: false,
-                // Счетчик всплывающего окна
-                ntfCounter: 0
-            }
-        },
         methods: {
             // Удаление сотрудника
             deletePerson(id, itemId) {
@@ -52,6 +36,7 @@
             },
         },
         computed: {
+            // Получение сотрудников из store
             employees() {
                 return this.$store.getters.employees
             }
@@ -65,9 +50,6 @@
 
 <style scoped lang="scss">
   @import "../assets/styles.scss";
-  // Главный контейнер
-  .container {
-  }
   // Хедер
   .header {
     position: fixed;
@@ -141,7 +123,6 @@
       padding: 10px;
     }
   }
-
   // Адаптивная верстка 790px
   @media (max-width: 790px) {
     // Список сотрудников

@@ -2,7 +2,7 @@
   <div id="app">
     <EmployeeList></EmployeeList>
     <Modal v-if="modalShow"></Modal>
-    <Ntf ></Ntf>
+    <Ntf></Ntf>
   </div>
 </template>
 

@@ -4,9 +4,7 @@
       <div class="modal" @click="stopPropagation()">
         <div class="modal-header">
           <p>{{ modalName }}</p>
-          <div class="modal-header-close">
-            <a @click="closeModal()"></a>
-          </div>
+          <a @click="closeModal()"></a>
         </div>
         <div class="modal-form">
           <input type="text" placeholder="Введите имя сотрудника"
@@ -100,6 +98,7 @@
         height: 32px;
         cursor: pointer;
         transition: 0.3s;
+        outline: none;
         &:hover {
           transform: rotate(90deg);
         }
@@ -118,10 +117,6 @@
         &:after {
           transform: rotate(-45deg);
         }
-      }
-      &-close {
-        box-sizing: border-box;
-        width: 100%;
       }
     }
     &-form {

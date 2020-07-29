@@ -1,9 +1,11 @@
+// Взаимодействие с модальным окном
 export default {
     state: {
         modalShow: false,
         modalOptions: []
     },
     mutations: {
+        // Открытие модального окна по условию
         openModal(state, modalOptions) {
             if (modalOptions.action === 'POST') {
                 modalOptions.name = 'Создание сотрудника'
@@ -14,13 +16,11 @@ export default {
             state.modalOptions = modalOptions
             state.modalShow = true
         },
+        // Закрытие модального окна
         closeModal(state) {
             state.modalShow = false
             state.modalOptions = []
         }
-    },
-    actions: {
-
     },
     getters: {
         modalShow(state) {
